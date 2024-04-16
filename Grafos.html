@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grafo</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+    <style type="text/css">
+      #mynetwork {
+        width: 100%;
+        height: 680px;
+        border: 2px solid rgb(173, 230, 195);
+      }
+    </style>
+    <style type="text/css">
+      button {
+        font-size: 20px;
+        padding: 10px 20px;
+        background-color: #218c38;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+    
+      input {
+        font-size: 20px;
+        padding: 10px 20px;
+        background-color: #218c38;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #load-graph-button {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #000000">
+    <div style="text-align: center">
+      <button onclick="graph.addNewNode()">Agregar Nodo</button>
+      <button onclick="graph.addNewEdge()">Agregar Arista</button>
+      <button onclick="editNode()">Editar Nodo</button>
+      <button onclick="editEdge()">Editar Arista</button>
+      <button onclick="deleteNode()">Eliminar Nodo</button>
+      <button onclick="deleteEdge()">Eliminar Arista</button>
+      <button onclick="saveGraph()">Guardar Grafo</button>
+      <button onclick="highlightLongestPath()">Mostrar camino más largo</button>
+      <button onclick="highlightShortestPath()">
+        Mostrar camino más corto
+      </button>
+      <button onclick="loadGraph()" id="load-graph-button">Cargar Grafo</button>
+      <button onclick="showAdjacencyMatrix()">
+        Mostrar Matriz de Adyacencia
+      </button>
+      <button onclick="showIncidenceMatrix()">
+        Mostrar matriz de incidencia
+      </button>
+
+      <input type="file" id="fileInput" />
+
+      <div id="adjacencyMatrix"></div>
+
+      <div id="mynetwork"></div>
+    </div>
+    <script src="Grafos.js"></script>
+  </body>
+</html>
